@@ -36,7 +36,7 @@ def lmt8x_v2t(model, v):
         else:
             right = middle
 
-    return start + (vout[left] - v) / (vout[left] - vout[right]) + left
+    return start + float(vout[left] - v) / float(vout[left] - vout[right]) + left
 
 
 def lmt84_v2t(v):
