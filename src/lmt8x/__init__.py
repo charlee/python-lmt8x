@@ -1,5 +1,6 @@
 __version__ = '0.0.0'
 
+
 def lmt8x_v2t(model, v):
     if model == 'lmt84':
         from .lmt84 import transfer_table
@@ -28,13 +29,12 @@ def lmt8x_v2t(model, v):
         # found exact value
         if vout[middle] == v:
             return start + middle
-        
+
         elif vout[middle] > v:
             left = middle
 
         else:
             right = middle
-
 
     return start + (vout[left] - v) / (vout[left] - vout[right]) + left
 

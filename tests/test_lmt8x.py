@@ -81,4 +81,3 @@ class LMT87TestCase(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             lmt87_v2t(0)
-
