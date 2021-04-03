@@ -49,7 +49,22 @@ Overview
 
 Transfer tables for LMT8x Temperature Sensors.
 
-* Free software: MIT license
+LMT8x (LMT84, LMT85, LMT86, LMT87) are a series of `analog temperature sensors <https://www.ti.com/sensors/temperature-sensors/overview.html>`_ made by Texus Instrument.
+These sensors can provide -50°C ~ 150°C with ±0.4°C accuracy. Although the output voltage is nearly linear to the temperature, it does have a slight umbrella parabolic shape.
+Therefore transfer tables are required to convert the voltage to the temperature.
+
+Datasheets:
+
+- `LMT84 <https://www.ti.com/lit/ds/symlink/lmt84.pdf>`_
+- `LMT85 <https://www.ti.com/lit/ds/symlink/lmt85.pdf>`_
+- `LMT86 <https://www.ti.com/lit/ds/symlink/lmt86.pdf>`_
+- `LMT87 <https://www.ti.com/lit/ds/symlink/lmt87.pdf>`_
+
+
+This package provides tranfer functions for LMT84, LMT85, LMT86, and LMT87 based on their transfer tables.
+These funcitons basically do a binary search through the transfer tables and return the match.
+If no match found, linear interpolation will be used to generate an approximate value.
+
 
 Installation
 ============
@@ -62,6 +77,27 @@ You can also install the in-development version with::
 
     pip install https://github.com/charlee/python-lmt8x/archive/master.zip
 
+Usage
+======
+
+`lmt8x` package provides functions `lmt84_v2t`, `lmt85_v2t`, `lmt86_v2t`, and `lmt87_v2t` for converting voltage to temperature.
+
+- input voltage must be in mV.
+- output temperature is in celsius.
+
+::
+
+  from lmt8x import lmt87_v2t     # or `lmt86_v2t`, `lmt85_v2t`, `lmt84_v2t`
+
+  # read voltage from sensors.
+  # v = read_sensor()
+
+  # convert v to temperature.
+  # the pamaeter must be in mV. Return value is in celsius.
+  temp = lmt87_v2t(v * 1000)
+
+  print('Temperature is %s C.' % temp)
+  
 
 Documentation
 =============
