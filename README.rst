@@ -39,7 +39,7 @@ Overview
     :alt: Supported implementations
     :target: https://pypi.org/project/lmt8x
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/charlee/python-lmt8x/v0.0.0.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/charlee/python-lmt8x/v1.0.0.svg
     :alt: Commits since latest release
     :target: https://github.com/charlee/python-lmt8x/compare/v0.0.0...master
 
