@@ -1,3 +1,4 @@
+# datasheet: https://www.ti.com/lit/ds/symlink/lmt86.pdf
 transfer_table = {
     'range': [-50, 150],
     'vout': [
