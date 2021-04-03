@@ -41,7 +41,7 @@ Overview
 
 .. |commits-since| image:: https://img.shields.io/github/commits-since/charlee/python-lmt8x/v1.0.0.svg
     :alt: Commits since latest release
-    :target: https://github.com/charlee/python-lmt8x/compare/v0.0.0...master
+    :target: https://github.com/charlee/python-lmt8x/compare/v1.0.0...master
 
 
 
